@@ -28,6 +28,14 @@ class App extends Component {
     };
   }
 
+
+    async componentDidMount() {
+    let linkToCreditAPI = 'https://johnnylaicode.github.io/api/credits.json';
+    }
+
+
+
+  
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
