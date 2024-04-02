@@ -29,10 +29,26 @@ class App extends Component {
   }
 
 
-    async componentDidMount() {
-    let linkToCreditAPI = 'https://johnnylaicode.github.io/api/credits.json';
-    }
+  // API request to get credit and debit info
+  async componentDidMount() {
+  let linkToCreditAPI = 'https://johnnylaicode.github.io/api/credits.json';
+  }
 
+
+  try { 
+    let creditResponse = await axios.get(linkToCreditAPI);
+    console.log(creditResponse); 
+
+    this.setState({ creditList: creditResponse.data }); 
+    const totalCreditBalance = creditResponse.data.reduce((total, credit) => total + credit.amount, 0);
+    this.updateAccountBalance(totalCreditBalance);
+  }
+  catch (error) { 
+    if (error.response) { // Use the standard 'response' for errors
+      console.log(error.response.data);
+      console.log(error.response.status);
+    }
+  }
 
 
   
