@@ -45,12 +45,31 @@ class App extends Component {
   }
   catch (error) { 
     if (error.response) { // Use the standard 'response' for errors
-      console.log(error.response.data);
-      console.log(error.response.status);
+      console.log(error.response.data); //Not found
+      console.log(error.response.status); //404
     }
   }
 
 
+
+  //link second API for debit
+  let linkToDebitAPI = 'https://johnnylaicode.github.io/api/debits.json';
+  try { 
+    let debitResponse = await axios.get(linkToDebitAPI);
+    console.log(debitResponse); 
+
+    this.setState({ debitList: debitResponse.data });
+    const totalDebitBalance = debitResponse.data.reduce((total, debit) => total + debit.amount, 0);
+
+    const newAccountBalance = this.state.accountBalance - totalDebitBalance;
+    this.updateAccountBalance(newAccountBalance);
+  }
+  catch (error) { 
+    if (error.response) {
+      console.log(error.response.data); //Not found
+      console.log(error.response.status); //404
+    }
+  }
 }
 
 
