@@ -14,12 +14,20 @@ let creditsView = () => {
   });
 }
 
-const Credits = (props) => {
   return (
     <div>
       <h1>Credits</h1>
+      {creditsView()}
       <br/>
-      <Link to="/">Return to Home</Link>
+
+      <form onSubmit={submissionCredit}>
+        <input type="text" name="description" required/>
+        <input type="number" step="any" name="amount" required/>
+        <button type="submit">Add Credit</button>
+      </form>
+      <AccountBalance accountBalance={balance} />
+      <br/>
+      <Link to="/">Home</Link>
     </div>
   );
 }
