@@ -28,6 +28,12 @@ class App extends Component {
     };
   }
 
+
+    updateAccountBalance = (newBalance) => {
+    this.setState({ accountBalance: newBalance });
+  }
+
+  
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
