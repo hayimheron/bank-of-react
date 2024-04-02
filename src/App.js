@@ -51,6 +51,9 @@ class App extends Component {
   }
 
 
+}
+
+
   
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
