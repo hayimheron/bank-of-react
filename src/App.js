@@ -28,6 +28,16 @@ class App extends Component {
     };
   }
 
+
+  addDebit = (newDebit) => {
+    this.setState((prevState) => ({
+        debitList: [...prevState.debitList, newDebit],
+    }));
+}
+
+
+
+  
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
