@@ -7,6 +7,10 @@ Note: You need to work on this file for the Assignment.
 import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
+const Credits = (props) => { 
+  
+}
+
 let creditsView = () => {
   return credits.map((credits) => { 
     let date = credits.date.slice(0, 10);
