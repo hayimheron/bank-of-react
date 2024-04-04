@@ -38,6 +38,20 @@ class App extends Component {
     }));
 }
 
+  //adding new credit card into the list
+  addCredit = (newCredit) => {
+    this.setState((prevState) => ({
+      creditList: [...prevState.creditList, newCredit],
+    }));
+
+  }
+
+
+
+
+
+
+  
 
 
   
