@@ -72,7 +72,7 @@ class App extends Component {
     //Debit API
     let linkToDebitAPI = 'https://johnnylaicode.github.io/api/debits.json';
     try {  // Accept success response as array of JSON objects (users)
-      let dresponse = await axios.get(linkToDebitAPI);
+      let altresponse = await axios.get(linkToDebitAPI);
       console.log(altresponse);  // Print out response
       // To get data object in the response, need to use "response.data"
       this.setState({ debitList: altresponse.data });  // Store received data in state's "users" object
