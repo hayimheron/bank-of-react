@@ -48,6 +48,26 @@ class App extends Component {
 
 
 
+//API request to get credit and debit info
+  async componentDidMount() {
+    let linkToCreditAPI = 'https://johnnylaicode.github.io/api/credits.json';
+
+    try {  // Accept success response as array of JSON objects (users)
+      let cresponse = await axios.get(linkToCreditAPI);
+      console.log(cresponse);  // Print out response
+      // To get data object in the response, need to use "response.data"
+      this.setState({ creditList: cresponse.data });  // Store received data in state's "users" object
+      const totalCreditBalance = cresponse.data.reduce((total, credit) => total + credit.amount, 0);
+      this.updateAccountBalance(totalCreditBalance);
+    }
+    catch (error) {  // Print out errors at console when there is an error response
+      if (error.cresponse) {
+        // The request was made, and the server responded with error message and status code.
+        console.log(error.cresponse.data);  // Print out error message (e.g., Not Found)
+        console.log(error.cresponse.status);  // Print out error status code (e.g., 404)
+      }
+    }
+
 
 
 
