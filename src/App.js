@@ -69,7 +69,27 @@ class App extends Component {
     }
 
 
+    //Debit API
+    let linkToDebitAPI = 'https://johnnylaicode.github.io/api/debits.json';
+    try {  // Accept success response as array of JSON objects (users)
+      let dresponse = await axios.get(linkToDebitAPI);
+      console.log(altresponse);  // Print out response
+      // To get data object in the response, need to use "response.data"
+      this.setState({ debitList: altresponse.data });  // Store received data in state's "users" object
+      const totalDebitBalance = altresponse.data.reduce((total, debit) => total + debit.amount, 0);
 
+      // Subtract the total debit from the initial account balance
+      const newAccountBalance = this.state.accountBalance - totalDebitBalance;
+      this.updateAccountBalance(newAccountBalance);
+    }
+    catch (error) {  // Print out errors at console when there is an error response
+      if (error.altresponse) {
+        // The request was made, and the server responded with error message and status code.
+        console.log(error.altresponse.data);  // Print out error message (e.g., Not Found)
+        console.log(error.altresponse.status);  // Print out error status code (e.g., 404)
+      }
+    }
+  }
 
   
 
