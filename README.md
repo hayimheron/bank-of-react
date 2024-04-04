@@ -1,5 +1,5 @@
-# bank-of-react-starter-code
-This repository is the starter code for Assignment 3 - Bank of React.
+# bank-of-react
+Hayim Heron - @hayimheron
 
 ### Live Link 
 [Website link](https://johnnylaicode.github.io/bank-of-react-starter-code/)
