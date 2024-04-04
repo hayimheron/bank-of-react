@@ -47,6 +47,7 @@ const Debits = (props) => {
         <input type="number" step="any" name="amount" required/>
         <button type="submit">Add Debit</button>
       </form>
+      <AccountBalance accountBalance={balance} />
       <br/>
       <Link to="/">Return to Home</Link>
     </div>
