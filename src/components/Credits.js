@@ -7,9 +7,15 @@ Note: You need to work on this file for the Assignment.
 import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
-const Credits = (props) => { 
+  // Create Credit list
+const Credits = (props) => {
+  const { credits, balance, updateAccountBalance } = props;
+  let newBalance = 0;
+
+  const roundToTwoDecimalPlaces = (value) => {
+    return Math.round(value * 100) / 100;
+  }; 
   
-}
 
 let creditsView = () => {
   return credits.map((credits) => { 
