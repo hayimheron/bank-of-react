@@ -7,6 +7,13 @@ Note: You need to work on this file for the Assignment.
 import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
+
+const Debits = (props) => {
+  const { debits, balance, updateAccountBalance } = props;
+  // Initialize list balance
+  let newBalance = 0;
+
+
 const Credits = (props) => {
   return (
     <div>
