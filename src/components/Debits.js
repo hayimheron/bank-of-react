@@ -12,6 +12,19 @@ const Debits = (props) => {
   // Create the list of Debit items
   let newBalance = 0;
 
+  const submissionDebit = (event) => {
+  event.preventDefault()
+  newBalance = (balance - parseFloat(event.target.amount.value)).toFixed(2);
+  const newDebit = {
+    id: debits.length + 1,
+    description: event.target.description.value,
+    amount: parseFloat(event.target.amount.value).toFixed(2),
+    date: new Date().toISOString()
+  }
+
+  updateAccountBalance(newBalance);
+  props.addDebit(newDebit);
+  event.target.reset()
 
   }
 
