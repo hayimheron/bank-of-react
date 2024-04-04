@@ -67,7 +67,7 @@ let creditsView = () => {
       </form>
       <AccountBalance accountBalance={balance} />
       <br/>
-      <Link to="/">Home</Link>
+      <Link to="/">Return to Home</Link>
     </div>
   );
 }
