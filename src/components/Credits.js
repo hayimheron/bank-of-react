@@ -35,7 +35,7 @@ const submissionCredit = (event) => {
     description: event.target.description.value, // Get description from form input
     amount: parseFloat(event.target.amount.value).toFixed(2), // Ensure amount has two decimal places
     date: new Date().toISOString() // Record the current timestamp
-  };
+  }
 
   // Update the overall account balance
   updateAccountBalance(newBalance); 
@@ -45,7 +45,7 @@ const submissionCredit = (event) => {
 
   // Reset the form for the next entry
   event.target.reset(); 
-};
+}
   
 
 let creditsView = () => {
