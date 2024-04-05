@@ -50,7 +50,7 @@ class App extends Component {
 
 //API request to get credit and debit info
   async componentDidMount() {
-    let linkToCreditAPI = 'https://hayimheron.github.io/api/credits.json';
+    let linkToCreditAPI = 'https://johnnylaicode.github.io/api/credits.json';
 
     try {  // Accept success response as array of JSON objects (users)
       let cresponse = await axios.get(linkToCreditAPI);
@@ -70,7 +70,7 @@ class App extends Component {
 
 
     //Debit API
-    let linkToDebitAPI = 'https://hayimheron.github.io/api/debits.json';
+    let linkToDeditAPI = 'https://johnnylaicode.github.io/api/debits.json';
     try {  // Accept success response as array of JSON objects (users)
       let altresponse = await axios.get(linkToDebitAPI);
       console.log(altresponse);  // Print out response
