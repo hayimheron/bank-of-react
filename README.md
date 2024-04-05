@@ -2,7 +2,7 @@
 Hayim Heron - @hayimheron
 
 ### Live Link 
-[Website link](https://hayimheron.github.io/bank-of-react/)
+[Website link](https://hayimheron.github.io/bank-of-react-starter-code/)
 
 ----------
 ### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as your starter codebase
